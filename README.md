@@ -9,3 +9,4 @@
 
 Todo: 
 - Test Application Manifest works on Mobile 
+- Practice Deploy to Vercel
