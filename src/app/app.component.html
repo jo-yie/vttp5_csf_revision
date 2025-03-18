@@ -1,0 +1,32 @@
+<h2>Shopping Cart</h2>
+
+<form [formGroup]="form" (submit)="processForm()">
+  <table>
+    <tr>
+      <td>Item</td>
+      <td><input type="text" name="" id="" formControlName="item"></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><input type="number" name="" id="" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">Add</button>
+      </td>
+    </tr>
+  </table>
+</form>
+
+@if (itemCount$ | async) {
+  <h3>Cart ({{ itemCount$ | async }})</h3>
+  <button (click)="deleteItemFromCart()">Delete Apple</button>
+  <ol>
+    <li  *ngFor="let item of items$ | async">{{ item.item }}</li>
+  </ol>
+} 
+
+@else {
+  <h3>Your Cart is Empty</h3>
+}
